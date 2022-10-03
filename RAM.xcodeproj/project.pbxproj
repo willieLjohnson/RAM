@@ -14,6 +14,9 @@
 		E36DBB7F28E8668C00C83FAC /* RAMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB7E28E8668C00C83FAC /* RAMTests.swift */; };
 		E36DBB8928E8668C00C83FAC /* RAMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB8828E8668C00C83FAC /* RAMUITests.swift */; };
 		E36DBB8B28E8668C00C83FAC /* RAMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */; };
+		E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */; };
+		E36DBB9F28E8734E00C83FAC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */; };
+		E38B544328E8BE3400281E2C /* BuildTools in Resources */ = {isa = PBXBuildFile; fileRef = E38B544228E8BE3400281E2C /* BuildTools */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		E36DBB8428E8668C00C83FAC /* RAMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RAMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36DBB8828E8668C00C83FAC /* RAMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMUITests.swift; sourceTree = "<group>"; };
 		E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGridView.swift; sourceTree = "<group>"; };
+		E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		E38B544228E8BE3400281E2C /* BuildTools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildTools; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,7 @@
 		E36DBB6128E8668B00C83FAC = {
 			isa = PBXGroup;
 			children = (
+				E38B544228E8BE3400281E2C /* BuildTools */,
 				E36DBB6C28E8668B00C83FAC /* RAM */,
 				E36DBB7D28E8668C00C83FAC /* RAMTests */,
 				E36DBB8728E8668C00C83FAC /* RAMUITests */,
@@ -94,6 +101,8 @@
 		E36DBB6C28E8668B00C83FAC /* RAM */ = {
 			isa = PBXGroup;
 			children = (
+				E36DBB9D28E8733900C83FAC /* ViewModels */,
+				E36DBB9A28E86E1000C83FAC /* Views */,
 				E36DBB6D28E8668B00C83FAC /* RAMApp.swift */,
 				E36DBB6F28E8668B00C83FAC /* ContentView.swift */,
 				E36DBB7128E8668C00C83FAC /* Assets.xcassets */,
@@ -127,6 +136,22 @@
 			path = RAMUITests;
 			sourceTree = "<group>";
 		};
+		E36DBB9A28E86E1000C83FAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E36DBB9D28E8733900C83FAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +159,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E36DBB8E28E8668C00C83FAC /* Build configuration list for PBXNativeTarget "RAM" */;
 			buildPhases = (
+				E36AD95D28E8BAF90078B036 /* SwiftFormat */,
 				E36DBB6628E8668B00C83FAC /* Sources */,
 				E36DBB6728E8668B00C83FAC /* Frameworks */,
 				E36DBB6828E8668B00C83FAC /* Resources */,
@@ -231,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E38B544328E8BE3400281E2C /* BuildTools in Resources */,
 				E36DBB7528E8668C00C83FAC /* Preview Assets.xcassets in Resources */,
 				E36DBB7228E8668C00C83FAC /* Assets.xcassets in Resources */,
 			);
@@ -252,12 +279,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E36AD95D28E8BAF90078B036 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk iphoneos --show-sdk-path)\n\n#swift package update\nswift run -c release swiftformat   --config \"$SRCROOT/.swiftformat\" \"$SRCROOT\"\nswift run swiftlint  --config \"$SRCROOT/.swiftlint.yml\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E36DBB6628E8668B00C83FAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E36DBB9F28E8734E00C83FAC /* GameViewModel.swift in Sources */,
 				E36DBB7028E8668B00C83FAC /* ContentView.swift in Sources */,
+				E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */,
 				E36DBB6E28E8668B00C83FAC /* RAMApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
