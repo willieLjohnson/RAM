@@ -5,17 +5,91 @@
 //  Created by Willie Liwa Johnson on 10/1/22.
 //
 
+import Foundation
 import SwiftUI
 
 struct ContentView: View {
+  @Environment(\.presentationMode) private var presentationMode
+  @ObservedObject var gameViewModel: GameViewModel
+
+  init(_ gameViewModel: GameViewModel) {
+    self.gameViewModel = gameViewModel
+  }
+
+  @State private var gameCompleteAlert: Bool = false
+
   var body: some View {
-    VStack {}
-      .padding()
+    VStack {
+      AspectVGridView(items: gameViewModel.cards, aspectRatio: ViewConstants.gridAspectRatio) { card in
+        if card.isMatched, !card.isActive {
+          Color.clear
+        } else {
+          CardView(card: card)
+            .foregroundColor(gameViewModel.imageSet.color)
+            .padding(ViewConstants.cardPadding)
+            .transition(.scale)
+            .onTapGesture { withAnimation(.easeInOut(duration: ViewConstants.chooseAnimDuration)) {
+              gameViewModel.choose(card)
+              gameCompleteAlert = gameViewModel.areAllCardsActive()
+            }
+            }
+        }
+      }
+      Spacer()
+      Text(Locale.GameView.score(gameViewModel.getScore()))
+        .font(.title2)
+        .padding()
+    }
+    .navigationTitle("\(gameViewModel.imageSet.name)")
+    .toolbar {
+      ToolbarItem(placement: .navigationBarTrailing) {
+        Button(Locale.GameView.restart) {
+          withAnimation(Animation.spring()) {
+            gameViewModel.restart()
+          }
+        }
+      }
+    }
+    .alert(
+      Locale.GameView.congratulations(gameViewModel.getScore()),
+      isPresented: $gameCompleteAlert
+    ) {
+      Button(Locale.GameView.ok, role: .cancel) {
+        gameViewModel.restart()
+        presentationMode.wrappedValue.dismiss()
+      }
+      Button(Locale.GameView.newGame) {
+        withAnimation {
+          gameViewModel.restart()
+        }
+      }
+    }
+  }
+
+  private enum ViewConstants {
+    static let gridAspectRatio: CGFloat = 1
+    static let cardPadding: CGFloat = 5
+    static let chooseAnimDuration: Double = 0.5
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    let previewContentViewModel = GameViewModel(ImageSetItem(
+      name: "Random",
+      color: .red,
+      pairCount: 12,
+      images: ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨",
+               "🍏", "🍎", "🍐", "🍊", "🍋", "🍌", "🍉", "🍇", "🍓",
+               "📁", "⌚", "📱", "📲", "💻", "⌨️", "🖥", "🖨", "🖱"]
+    ))
+
+    ContentView(previewContentViewModel)
+      .environment(\.locale, .init(identifier: "en"))
+      .preferredColorScheme(.dark)
+
+    ContentView(previewContentViewModel)
+      .environment(\.locale, .init(identifier: "es"))
+      .preferredColorScheme(.light)
   }
 }

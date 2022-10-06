@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  RAM
+
+  Created by Willie Liwa Johnson on 10/6/22.
+  
+*/
+
+/*
+ Emoji Sets View.
+*/
+
+/* The name of the app. */
+"app-name" = "Combina Dos";
+
+/* Delete button on swipe. */
+"delete" = "Eliminar";
+
+/* Edit button on swipe. */
+"edit" = "Editar";
+
+/*
+ Add Emoji Set View
+*/
+
+/* Header of first form group. */
+"set" = "Grupo";
+
+/* Placeholder for insert emoji set name. */
+"insert-name" = "Inserta un nombre";
+
+/* Color of emoji set. */
+"color" = "Color";
+
+/* Header for the emojis in set. */
+"emojis-list" = "Emojis - Toca para remover";
+
+/* Header of add emoji section. */
+"add-emoji" = "Agregar emoji";
+
+/* Add emoji view title. */
+"add-set" = "Agrega nuevo grupo";
+
+/* Edit emoji view title. */
+"edit-set" = "Editar grupo";
+
+/* Cancel edit/add toolbar button. */
+"cancel" = "Cancelar";
+
+/* Save edit/add toolbar button. */
+"save" = "Guardar";
+
+/*
+ Game View
+*/
+
+/* Score of the game. */
+"score %lld" = "Puntaje: %lld";
+
+/* Restart game toolbar button. */
+"restart" = "Reiniciar";
+
+/* Congratulations title alert with final score. */
+"congratulations %lld" = "Felicidades! Puntaje: %lld";
+
+/* Alert dialog Ok button. */
+"ok" = "De acuerdo";
+
+/* Alert dialog new game button. */
+"new-game" = "Nuevo juego";

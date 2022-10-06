@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E32AABF528EB415E0005BA5E /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AABF428EB415E0005BA5E /* CardModel.swift */; };
+		E32AABF828EB427E0005BA5E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32AABF728EB427E0005BA5E /* Extensions.swift */; };
 		E36DBB6E28E8668B00C83FAC /* RAMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB6D28E8668B00C83FAC /* RAMApp.swift */; };
 		E36DBB7028E8668B00C83FAC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB6F28E8668B00C83FAC /* ContentView.swift */; };
 		E36DBB7228E8668C00C83FAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E36DBB7128E8668C00C83FAC /* Assets.xcassets */; };
@@ -16,7 +18,13 @@
 		E36DBB8B28E8668C00C83FAC /* RAMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */; };
 		E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */; };
 		E36DBB9F28E8734E00C83FAC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */; };
-		E38B544328E8BE3400281E2C /* BuildTools in Resources */ = {isa = PBXBuildFile; fileRef = E38B544228E8BE3400281E2C /* BuildTools */; };
+		E3C7E6E128EF5600001DE56E /* ImageSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */; };
+		E3C7E6E328EF5A50001DE56E /* ImageSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E228EF5A50001DE56E /* ImageSetViewModel.swift */; };
+		E3C7E6E628EF5BA0001DE56E /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E528EF5BA0001DE56E /* Locale.swift */; };
+		E3C7E6ED28EF5CE9001DE56E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3C7E6EF28EF5CE9001DE56E /* Localizable.strings */; };
+		E3C7E6F328EF5DA1001DE56E /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = E3C7E6F528EF5DA1001DE56E /* Localizable.stringsdict */; };
+		E3C7E6F828EF798E001DE56E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6F728EF798E001DE56E /* CardView.swift */; };
+		E3C7E6FA28EF7BF5001DE56E /* CardifyModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6F928EF7BF5001DE56E /* CardifyModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E32AABF428EB415E0005BA5E /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		E32AABF728EB427E0005BA5E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E36DBB6A28E8668B00C83FAC /* RAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E36DBB6D28E8668B00C83FAC /* RAMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMApp.swift; sourceTree = "<group>"; };
 		E36DBB6F28E8668B00C83FAC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,7 +59,15 @@
 		E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGridView.swift; sourceTree = "<group>"; };
 		E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
-		E38B544228E8BE3400281E2C /* BuildTools */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BuildTools; sourceTree = "<group>"; };
+		E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetModel.swift; sourceTree = "<group>"; };
+		E3C7E6E228EF5A50001DE56E /* ImageSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetViewModel.swift; sourceTree = "<group>"; };
+		E3C7E6E528EF5BA0001DE56E /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
+		E3C7E6EE28EF5CE9001DE56E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3C7E6F028EF5D1F001DE56E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E3C7E6F428EF5DA1001DE56E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		E3C7E6F628EF5DB5001DE56E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = es; path = es.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		E3C7E6F728EF798E001DE56E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		E3C7E6F928EF7BF5001DE56E /* CardifyModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardifyModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +95,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E32AABF328EB41460005BA5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E32AABF428EB415E0005BA5E /* CardModel.swift */,
+				E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E32AABF628EB42570005BA5E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E36DBB6128E8668B00C83FAC = {
 			isa = PBXGroup;
 			children = (
-				E38B544228E8BE3400281E2C /* BuildTools */,
 				E36DBB6C28E8668B00C83FAC /* RAM */,
 				E36DBB7D28E8668C00C83FAC /* RAMTests */,
 				E36DBB8728E8668C00C83FAC /* RAMUITests */,
@@ -101,6 +134,9 @@
 		E36DBB6C28E8668B00C83FAC /* RAM */ = {
 			isa = PBXGroup;
 			children = (
+				E3C7E6E428EF5B8C001DE56E /* Helpers */,
+				E32AABF628EB42570005BA5E /* Extensions */,
+				E32AABF328EB41460005BA5E /* Models */,
 				E36DBB9D28E8733900C83FAC /* ViewModels */,
 				E36DBB9A28E86E1000C83FAC /* Views */,
 				E36DBB6D28E8668B00C83FAC /* RAMApp.swift */,
@@ -140,6 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */,
+				E3C7E6F728EF798E001DE56E /* CardView.swift */,
+				E3C7E6F928EF7BF5001DE56E /* CardifyModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,8 +186,20 @@
 			isa = PBXGroup;
 			children = (
 				E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */,
+				E3C7E6E228EF5A50001DE56E /* ImageSetViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E3C7E6E428EF5B8C001DE56E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E32AABF728EB427E0005BA5E /* Extensions.swift */,
+				E3C7E6E528EF5BA0001DE56E /* Locale.swift */,
+				E3C7E6EF28EF5CE9001DE56E /* Localizable.strings */,
+				E3C7E6F528EF5DA1001DE56E /* Localizable.stringsdict */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +289,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = E36DBB6128E8668B00C83FAC;
 			productRefGroup = E36DBB6B28E8668B00C83FAC /* Products */;
@@ -257,8 +308,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E38B544328E8BE3400281E2C /* BuildTools in Resources */,
+				E3C7E6ED28EF5CE9001DE56E /* Localizable.strings in Resources */,
 				E36DBB7528E8668C00C83FAC /* Preview Assets.xcassets in Resources */,
+				E3C7E6F328EF5DA1001DE56E /* Localizable.stringsdict in Resources */,
 				E36DBB7228E8668C00C83FAC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +348,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk iphoneos --show-sdk-path)\n\n#swift package update\nswift run -c release swiftformat   --config \"$SRCROOT/.swiftformat\" \"$SRCROOT\"\nswift run swiftlint  --config \"$SRCROOT/.swiftlint.yml\"\n\n";
+			shellScript = "cd BuildTools\nSDKROOT=(xcrun --sdk iphoneos --show-sdk-path)\n\n#swift package update\nswift run -c release swiftformat --config \"$SRCROOT/.swiftformat\" \"$SRCROOT\"\nswift run swiftlint --config \"$SRCROOT/.swiftlint.yml\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -306,9 +358,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E36DBB9F28E8734E00C83FAC /* GameViewModel.swift in Sources */,
+				E32AABF828EB427E0005BA5E /* Extensions.swift in Sources */,
+				E3C7E6E628EF5BA0001DE56E /* Locale.swift in Sources */,
 				E36DBB7028E8668B00C83FAC /* ContentView.swift in Sources */,
+				E3C7E6FA28EF7BF5001DE56E /* CardifyModifier.swift in Sources */,
+				E3C7E6F828EF798E001DE56E /* CardView.swift in Sources */,
 				E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */,
 				E36DBB6E28E8668B00C83FAC /* RAMApp.swift in Sources */,
+				E3C7E6E328EF5A50001DE56E /* ImageSetViewModel.swift in Sources */,
+				E32AABF528EB415E0005BA5E /* CardModel.swift in Sources */,
+				E3C7E6E128EF5600001DE56E /* ImageSetModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +403,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		E3C7E6EF28EF5CE9001DE56E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3C7E6EE28EF5CE9001DE56E /* en */,
+				E3C7E6F028EF5D1F001DE56E /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E3C7E6F528EF5DA1001DE56E /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3C7E6F428EF5DA1001DE56E /* en */,
+				E3C7E6F628EF5DB5001DE56E /* es */,
+			);
+			name = Localizable.stringsdict;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		E36DBB8C28E8668C00C83FAC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -409,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
