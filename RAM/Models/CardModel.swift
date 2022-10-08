@@ -36,10 +36,17 @@ struct Cards {
     cards.shuffle()
   }
 
-  // TODO: Create initalize for random card
-  // init(createRandomContent: (Int) -> String )
+  mutating func shuffle() {
+    cards = cards.shuffled()
+  }
 
-  mutating func chooseeee(_ card: CardItem) {
+  mutating func chooseRandom() -> CardItem {
+    let card = cards[Int.random(in: 0 ..< cards.count)]
+    choose(card)
+    return card
+  }
+
+  mutating func choose(_ card: CardItem) {
     // check if card exists and is not active or matched.
     guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
     guard !cards[chosenIndex].isActive else { return }
@@ -49,6 +56,7 @@ struct Cards {
       indexOfFirstCard = chosenIndex
       return
     }
+
     if cards[chosenIndex].content == cards[possibleMatchIndex].content {
       cards[chosenIndex].isMatched = true
       cards[possibleMatchIndex].isMatched = true
@@ -62,7 +70,7 @@ struct Cards {
     }
   }
 
-  mutating func choose(_ card: CardItem) {
+  mutating func chooseee(_ card: CardItem) {
     if let chosenIndex =
       cards.firstIndex(where: { $0.id == card.id }),
       !cards[chosenIndex].isActive,

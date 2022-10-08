@@ -23,7 +23,7 @@ struct ImageSets {
   public static let defaults: [ImageSetItem] = [
     ImageSetItem(
       name: "Random",
-      color: .red,
+      color: .random(hue: nil, 0.8, 0.6),
       pairCount: 12,
       images: ["🐶", "🐱", "🐭", "🍊", "📱", "📲", "💻", "🍋", "🍌", "🍉",
                "🍇", "🐹", "🚙", "🚌", "🚎", "🐻", "🐼", "🐨", "🍏", "🍎",
@@ -31,7 +31,7 @@ struct ImageSets {
     ),
     ImageSetItem(
       name: "Animals",
-      color: .yellow,
+      color: .random(hue: nil, 0.8, 0.6),
       pairCount: 3,
       images: ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨"]
     ),

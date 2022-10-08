@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
   @Environment(\.presentationMode) private var presentationMode
   @ObservedObject var gameViewModel: GameViewModel
+  let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
   init(_ gameViewModel: GameViewModel) {
     self.gameViewModel = gameViewModel
@@ -28,17 +29,34 @@ struct ContentView: View {
             .foregroundColor(gameViewModel.imageSet.color)
             .padding(ViewConstants.cardPadding)
             .transition(.scale)
-            .onTapGesture { withAnimation(.easeInOut(duration: ViewConstants.chooseAnimDuration)) {
-              gameViewModel.choose(card)
-              gameCompleteAlert = gameViewModel.areAllCardsActive()
-            }
-            }
+//            .onTapGesture { withAnimation(.easeInOut(duration: ViewConstants.chooseAnimDuration)) {
+//              gameViewModel.choose(card)
+//              gameCompleteAlert = gameViewModel.areAllCardsActive()
+//            }
+//            }
+        }
+      }.onReceive(timer) { _ in
+        withAnimation(.easeInOut(duration: ViewConstants.chooseAnimDuration)) {
+          gameViewModel.chooseRandom()
         }
       }
       Spacer()
-      Text(Locale.GameView.score(gameViewModel.getScore()))
-        .font(.title2)
-        .padding()
+      HStack {
+        Button(Locale.GameView.restart) {
+          withAnimation(Animation.spring()) {
+            gameViewModel.restart()
+          }
+        }.padding()
+        Spacer()
+        Text(Locale.GameView.score(gameViewModel.getScore()))
+          .font(.title2).padding()
+        Spacer()
+        Button("shuffle") {
+          withAnimation(Animation.spring()) {
+            gameViewModel.shuffle()
+          }
+        }.padding()
+      }.padding()
     }
     .navigationTitle("\(gameViewModel.imageSet.name)")
     .toolbar {
@@ -46,6 +64,11 @@ struct ContentView: View {
         Button(Locale.GameView.restart) {
           withAnimation(Animation.spring()) {
             gameViewModel.restart()
+          }
+        }
+        Button("shuffle") {
+          withAnimation(Animation.spring()) {
+            gameViewModel.shuffle()
           }
         }
       }
