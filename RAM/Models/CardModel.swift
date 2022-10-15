@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct CardItem: Identifiable {
+struct CardItem: Identifiable, Equatable {
   let id: UUID = .init()
   var isActive: Bool = false
   var isMatched: Bool = false
-  let content: String
+  var content: String = ""
+
+  mutating func changeContent(_ content: String) {
+    self.content = content
+  }
 }
 
 struct Cards {
@@ -36,38 +40,58 @@ struct Cards {
     cards.shuffle()
   }
 
+  mutating func update(_ card: CardItem, content: String) {
+    guard let index = getIndex(card) else { return }
+    cards[index].content = content
+  }
+
   mutating func shuffle() {
     cards = cards.shuffled()
   }
 
   mutating func chooseRandom() -> CardItem {
-    let card = cards[Int.random(in: 0 ..< cards.count)]
+    let index = Int.random(in: 0 ..< cards.count)
+    let card = cards[index]
     choose(card)
     return card
   }
 
+  func getIndex(_ card: CardItem) -> Int? {
+    cards.firstIndex(where: { $0.id == card.id })
+  }
+
   mutating func choose(_ card: CardItem) {
     // check if card exists and is not active or matched.
-    guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
-    guard !cards[chosenIndex].isActive else { return }
-    guard !cards[chosenIndex].isMatched else { return }
-    // is this the first card being picked?
-    guard let possibleMatchIndex = indexOfFirstCard else {
-      indexOfFirstCard = chosenIndex
+    guard let chosenIndex = getIndex(card) else { return }
+    guard !cards[chosenIndex].isActive else {
+      _ = chooseRandom()
       return
     }
-
-    if cards[chosenIndex].content == cards[possibleMatchIndex].content {
-      cards[chosenIndex].isMatched = true
-      cards[possibleMatchIndex].isMatched = true
-      score += 3
+    guard !cards[chosenIndex].isMatched else {
+      return
     }
+    // is this the first card being picked?
+//    guard let possibleMatchIndex = indexOfFirstCard else {
+//      indexOfFirstCard = chosenIndex
+//      return
+//    }
+
+//    if cards[chosenIndex].content == cards[possibleMatchIndex].content {
+//      cards[chosenIndex].isMatched = true
+//      cards[possibleMatchIndex].isMatched = true
+//      score += 3
+//    }
 
     cards[chosenIndex].isActive.toggle()
+//
+//    if score > 0 {
+//      score -= 1
+//    }
+  }
 
-    if score > 0 {
-      score -= 1
-    }
+  mutating func unChoose(_ card: CardItem) {
+    guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id }) else { return }
+    cards[chosenIndex].isActive = false
   }
 
   mutating func chooseee(_ card: CardItem) {

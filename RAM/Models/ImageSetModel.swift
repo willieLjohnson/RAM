@@ -17,6 +17,11 @@ struct ImageSetItem: Identifiable, Comparable {
   static func < (lhs: ImageSetItem, rhs: ImageSetItem) -> Bool {
     lhs.name < rhs.name
   }
+
+  func getRandom() -> String {
+    guard let randomImage = images.randomElement() else { return ":D" }
+    return randomImage
+  }
 }
 
 struct ImageSets {

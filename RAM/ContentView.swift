@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
   @Environment(\.presentationMode) private var presentationMode
   @ObservedObject var gameViewModel: GameViewModel
-  let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+  let chooseTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+//  let cardTimer = Timer.publish(every: 0.7, on: .main, in: .common).autoconnect()
 
   init(_ gameViewModel: GameViewModel) {
     self.gameViewModel = gameViewModel
@@ -35,7 +36,7 @@ struct ContentView: View {
 //            }
 //            }
         }
-      }.onReceive(timer) { _ in
+      }.onReceive(chooseTimer) { _ in
         withAnimation(.easeInOut(duration: ViewConstants.chooseAnimDuration)) {
           gameViewModel.chooseRandom()
         }

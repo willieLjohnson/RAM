@@ -10,15 +10,16 @@ import SwiftUI
 class GameViewModel: ObservableObject {
   @Published private var cardsSet: Cards
   private(set) var imageSet: ImageSetItem
+  private(set) var nBack: Int = 2
 
-  public var cardHistory: [CardItem]
+  public var cardHistory: Stack<CardItem>
 
   init(_ imageSet: ImageSetItem) {
     cardsSet = Cards(numberOfPairs: imageSet.pairCount) { pairIndex in
       imageSet.images[pairIndex]
     }
     self.imageSet = imageSet
-    cardHistory = []
+    cardHistory = Stack<CardItem>()
   }
 
   var cards: [CardItem] {
@@ -44,13 +45,21 @@ extension GameViewModel {
 
   func choose(_ card: CardItem) {
     cardsSet.choose(card)
-    cardHistory.append(card)
-    print(cardHistory)
+    cardHistory.push(card)
+    print(cardHistory.getCount())
+    if cardHistory.getCount() >= nBack {
+      guard let card = cardHistory.pop() else { return }
+      cardsSet.unChoose(card)
+    }
   }
 
   func chooseRandom() {
-    cardHistory.append(cardsSet.chooseRandom())
-    print(cardHistory)
+    var card = cardsSet.chooseRandom()
+    cardsSet.update(card, content: imageSet.getRandom())
+    if let poppedCard = cardHistory.pop() {
+      cardsSet.unChoose(poppedCard)
+    }
+    cardHistory.push(card)
   }
 
   func getScore() -> Int {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardView: View {
-  let card: CardItem
+  var card: CardItem
 
   var body: some View {
     GeometryReader { geometry in
@@ -25,6 +25,10 @@ struct CardView: View {
       }
       .cardify(isActive: card.isActive)
     }
+  }
+
+  mutating func unCardify() {
+    card.isActive = false
   }
 
   private enum ViewConstants {

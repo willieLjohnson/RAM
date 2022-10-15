@@ -18,6 +18,7 @@
 		E36DBB8B28E8668C00C83FAC /* RAMUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */; };
 		E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */; };
 		E36DBB9F28E8734E00C83FAC /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */; };
+		E386A26328F1D54D0056C7E8 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386A26228F1D54D0056C7E8 /* Stack.swift */; };
 		E3C7E6E128EF5600001DE56E /* ImageSetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */; };
 		E3C7E6E328EF5A50001DE56E /* ImageSetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E228EF5A50001DE56E /* ImageSetViewModel.swift */; };
 		E3C7E6E628EF5BA0001DE56E /* Locale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C7E6E528EF5BA0001DE56E /* Locale.swift */; };
@@ -59,6 +60,7 @@
 		E36DBB8A28E8668C00C83FAC /* RAMUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RAMUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E36DBB9B28E86E2600C83FAC /* AspectVGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGridView.swift; sourceTree = "<group>"; };
 		E36DBB9E28E8734E00C83FAC /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		E386A26228F1D54D0056C7E8 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetModel.swift; sourceTree = "<group>"; };
 		E3C7E6E228EF5A50001DE56E /* ImageSetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetViewModel.swift; sourceTree = "<group>"; };
 		E3C7E6E528EF5BA0001DE56E /* Locale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locale.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				E32AABF428EB415E0005BA5E /* CardModel.swift */,
 				E3C7E6E028EF5600001DE56E /* ImageSetModel.swift */,
+				E386A26228F1D54D0056C7E8 /* Stack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				E32AABF828EB427E0005BA5E /* Extensions.swift in Sources */,
 				E3C7E6E628EF5BA0001DE56E /* Locale.swift in Sources */,
 				E36DBB7028E8668B00C83FAC /* ContentView.swift in Sources */,
+				E386A26328F1D54D0056C7E8 /* Stack.swift in Sources */,
 				E3C7E6FA28EF7BF5001DE56E /* CardifyModifier.swift in Sources */,
 				E3C7E6F828EF798E001DE56E /* CardView.swift in Sources */,
 				E36DBB9C28E86E2600C83FAC /* AspectVGridView.swift in Sources */,
